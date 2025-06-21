@@ -86,7 +86,7 @@ document.querySelectorAll('.scroll-indicator').forEach(indicator => {
     });
 });
 
-document.getElementById('logo').addEventListener('click', () => {
+document.getElementById('scrollup').addEventListener('click', () => {
     const home = document.getElementById('home');
     if (home) {
         home.scrollIntoView({ behavior: 'smooth' });
