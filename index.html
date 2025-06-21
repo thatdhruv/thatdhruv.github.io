@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dhruv Trivedi</title>
+        <link rel="icon" href="dt-designer.png" type="image/png" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <nav class="aqua-navbar">
+            <div class="nav-left">
+                <img src="dt-designer.png" alt="DT" class="logo" id="logo" />
+            </div>
+            <div class="nav-center">
+                <h1 class="nav-title">Dhruv Trivedi</h1>
+            </div>
+            <div class="nav-right">
+                <div class="hamburger" id="hamburger" aria-label="menu" role="button" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="dropdown" id="dropdown">
+                    <button class="aqua-button nav-link" data-target="home">Home</button>
+                    <button class="aqua-button nav-link" data-target="about">About</button>
+                    <button class="aqua-button nav-link" data-target="contact">Contact</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="scroll-container">
+            <section id="home" class="main-content aqua-intro">
+                <h1 class="aqua-title">Technology meets creativity.</h1>
+                <div class="button-group intro-delay">
+                    <button class="aqua-button" onclick="scrollToSection('contact')">Contact</button>
+                    <button class="aqua-button aqua-button-focused" id="button-resume">Get Resume</button>
+                </div>
+                <div class="scroll-indicator-container intro-delay">
+                    <div class="scroll-indicator" data-target="about">&#x25BC;</div>
+                </div>
+            </section>
+
+            <section id="about">
+                <h2 class="aqua-title">About Me</h2>
+                <p class="aqua-text">Hello! I'm Dhruv Trivedi. I combine technology with creativity to build engaging digital experiences.</p>
+                <div class="scroll-indicator-container">
+                    <div class="scroll-indicator" data-target="home">&#x25B2;</div>
+                    <div class="scroll-indicator" data-target="contact">&#x25BC;</div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2 class="aqua-title">Contact</h2>
+                <p class="aqua-text">You can reach me at: <a href="mailto:thatdhruv@gmail.com">thatdhruv@gmail.com</a></p>
+                <div class="scroll-indicator-container">
+                    <div class="scroll-indicator" data-target="about">&#x25B2;</div>
+                </div>
+            </section>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
