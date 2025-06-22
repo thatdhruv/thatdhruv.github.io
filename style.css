@@ -532,6 +532,10 @@ h2.aqua-title {
         width: 120px;
         font-size: 18px;
     }
+    
+    h1.aqua-title {
+        font-size: 80px;
+    }
 
     .button-group {
         flex-direction: column;
@@ -539,7 +543,7 @@ h2.aqua-title {
     }
     
     .project-row {
-        padding: 20px 20px;
+        padding: 0;
     }
 
     .project-card {
