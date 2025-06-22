@@ -546,22 +546,8 @@ h2.aqua-title {
         gap: 20px;
     }
 
-    .project-scroll-wrapper {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .project-row {
-        flex-direction: column;
-        overflow-x: hidden;
-    }
-
     .project-card {
         width: 90%;
         margin: 0 auto;
-    }
-
-    .scroll-indicator.side {
-        display: none;
     }
 }
