@@ -539,12 +539,12 @@ h2.aqua-title {
     }
     
     .project-row {
-        padding: 20px;
+        padding: 20px 20px;
     }
 
     .project-card {
-        width: 50%;
-        margin: 0 auto;
+        width: 40%;
+        margin: 0;
     }
     
     .project-card .aqua-title.no-stroke {
