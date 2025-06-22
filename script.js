@@ -101,27 +101,53 @@ document.getElementById('scrollup').addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const projectRow = document.getElementById('project-row');
-  const scrollLeftBtn = document.getElementById('scroll-left');
-  const scrollRightBtn = document.getElementById('scroll-right');
-  const scrollAmount = 320;
+    const projectRow = document.getElementById('project-row');
+    const scrollLeftButton = document.getElementById('scroll-left');
+    const scrollRightButton = document.getElementById('scroll-right');
+    const cards = projectRow.querySelectorAll('.project-card');
+    let currentCardIndex = 0;
 
-  function updateScrollIndicators() {
-    const maxScrollLeft = projectRow.scrollWidth - projectRow.clientWidth;
-    scrollLeftBtn.classList.toggle('hidden', projectRow.scrollLeft <= 5);
-    scrollRightBtn.classList.toggle('hidden', projectRow.scrollLeft >= maxScrollLeft - 5);
-  }
+    function scrollToCard(index) {
+        if (index < 0 || index >= cards.length) return;
+        currentCardIndex = index;
+        cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        updateScrollIndicators();
+    }
 
-  scrollLeftBtn.addEventListener('click', () => {
-    projectRow.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
+    function updateScrollIndicators() {
+        scrollLeftButton.classList.toggle('hidden', currentCardIndex <= 0);
+        scrollRightButton.classList.toggle('hidden', currentCardIndex >= cards.length - 1);
+    }
 
-  scrollRightBtn.addEventListener('click', () => {
-    projectRow.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
+    scrollLeftButton.addEventListener('click', () => {
+        scrollToCard(currentCardIndex - 1);
+    });
 
-  projectRow.addEventListener('scroll', updateScrollIndicators);
-  window.addEventListener('resize', updateScrollIndicators);
+    scrollRightButton.addEventListener('click', () => {
+        scrollToCard(currentCardIndex + 1);
+    });
 
-  updateScrollIndicators();
+    projectRow.addEventListener('scroll', () => {
+        const rowRect = projectRow.getBoundingClientRect();
+        let closestIndex = 0;
+        let closestOffset = Infinity;
+
+        cards.forEach((card, i) => {
+        const cardRect = card.getBoundingClientRect();
+        const offset = Math.abs((cardRect.left + cardRect.width / 2) - (rowRect.left + rowRect.width / 2));
+        if (offset < closestOffset) {
+            closestOffset = offset;
+            closestIndex = i;
+        }
+        });
+
+        if (closestIndex !== currentCardIndex) {
+        currentCardIndex = closestIndex;
+        updateScrollIndicators();
+        }
+    });
+
+    window.addEventListener('resize', updateScrollIndicators);
+
+    updateScrollIndicators();
 });

@@ -381,7 +381,8 @@ body {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    scroll-padding: 0 20px;
+    scroll-padding-left: 10vw;
+    scroll-padding-right: 10vw;
     scrollbar-width: none;
 }
 
@@ -390,7 +391,8 @@ body {
 }
 
 .project-card {
-    flex: 0 0 300px;
+    flex: 0 0 clamp(260px, 80vw, 340px);
+    max-width: 90vw;
     scroll-snap-align: center;
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -521,7 +523,15 @@ h2.aqua-title {
 
 @media (max-width: 600px) {
     .aqua-text {
-        font-size: 18px;
+        font-size: 20px;
+    }
+    
+    h1.aqua-title {
+        font-size: 72px;
+    }
+
+    h2.aqua-title {
+        font-size: 70px;
     }
 
     .aqua-title {
@@ -530,11 +540,7 @@ h2.aqua-title {
 
     .aqua-button {
         width: 120px;
-        font-size: 18px;
-    }
-    
-    h1.aqua-title {
-        font-size: 72px;
+        font-size: 16px;
     }
 
     .button-group {
@@ -542,23 +548,16 @@ h2.aqua-title {
         gap: 20px;
     }
     
-    .project-scroll-wrapper {
-        padding: 0 10px;
-        width: 80%;
-    }
-    
     .project-row {
-        gap: 20px;
-        padding: 0;
-        scroll-padding: 0;
+        overflow-x: auto;
     }
 
     .project-card {
-        width: 10%;
+        width: 80vw;
         margin: 0;
     }
-    
+
     .project-card .aqua-title.no-stroke {
-        font-size: 20px;
+        font-size: 24px;
     }
 }
