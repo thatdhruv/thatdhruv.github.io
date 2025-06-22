@@ -316,48 +316,27 @@ body {
     border-bottom: 12px solid black;
 }
 
-.scroll-indicator.side {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border-radius: 999px;
-    cursor: pointer;
-    pointer-events: auto;
-    gap: 4px;
-}
-
-.scroll-indicator.side.left {
+.scroll-indicator.left {
     left: 10px;
 }
 
-.scroll-indicator.side.right {
+.scroll-indicator.right {
     right: 10px;
 }
 
-.scroll-indicator.side .triangle {
-    width: 0;
-    height: 0;
-}
-
-.scroll-indicator.side.left .triangle {
+.scroll-indicator.left .triangle {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-right: 12px solid black;
 }
 
-.scroll-indicator.side.right .triangle {
+.scroll-indicator.right .triangle {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-left: 12px solid black;
 }
 
-.scroll-indicator.side.hidden {
+.scroll-indicator.hidden {
     display: none;
 }
 
@@ -367,7 +346,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 60px;
     box-sizing: border-box;
 }
 
@@ -452,11 +430,11 @@ section {
 }
 
 h1.aqua-title {
-    font-size: 80px;
+    font-size: 160px;
 }
 
 h2.aqua-title {
-    font-size: 72px;
+    font-size: 96px;
 }
 
 @keyframes shift {

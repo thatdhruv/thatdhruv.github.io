@@ -56,7 +56,7 @@ function updateScrollIndicators() {
 }
 
 buttonResume.addEventListener('click', () => {
-    window.open('https://google.com', '_blank');
+    window.open('https://drive.google.com/file/d/1ONXRaQgtWCpae-vwBHUYJYxF4vPdDLcT/view?usp=drive_link', '_blank');
 });
 
 document.addEventListener('keydown', (e) => {
