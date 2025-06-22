@@ -523,14 +523,6 @@ h2.aqua-title {
     .aqua-text {
         font-size: 18px;
     }
-    
-    h1.aqua-title {
-        font-size: 48px;
-    }
-
-    h2.aqua-title {
-        font-size: 36px;
-    }
 
     .aqua-title {
         padding: 0 10px;
@@ -538,7 +530,7 @@ h2.aqua-title {
 
     .aqua-button {
         width: 120px;
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .button-group {
@@ -547,7 +539,11 @@ h2.aqua-title {
     }
 
     .project-card {
-        width: 90%;
+        width: 60%;
         margin: 0 auto;
+    }
+    
+    .project-card .aqua-title.no-stroke {
+        font-size: 28px;
     }
 }
