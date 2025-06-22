@@ -542,6 +542,10 @@ h2.aqua-title {
         gap: 20px;
     }
     
+    .project-scroll-wrapper {
+        padding: 0 20px;
+    }
+    
     .project-row {
         padding: 0;
     }
@@ -552,6 +556,6 @@ h2.aqua-title {
     }
     
     .project-card .aqua-title.no-stroke {
-        font-size: 24px;
+        font-size: 20px;
     }
 }
