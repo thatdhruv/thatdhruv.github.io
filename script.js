@@ -116,50 +116,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateScrollIndicators() {
         const maxScrollLeft = projectRow.scrollWidth - projectRow.clientWidth;
-
         const isScrollable = maxScrollLeft > 5;
 
-        scrollLeftButton.classList.toggle('hidden', !isScrollable || currentCardIndex <= 0);
-        scrollRightButton.classList.toggle('hidden', !isScrollable || currentCardIndex >= cards.length - 1);
+        const atStart = currentCardIndex <= 0;
+        const atEnd = currentCardIndex >= cards.length - 1;
+
+        const showLeft = isScrollable && !atStart;
+        const showRight = isScrollable && !atEnd;
+
+        scrollLeftButton.classList.toggle('hidden', !showLeft);
+        scrollRightButton.classList.toggle('hidden', !showRight);
+
+        scrollLeftButton.classList.remove('bounce-left', 'bounce-right');
+        scrollRightButton.classList.remove('bounce-left', 'bounce-right');
+
+        if (showLeft && !showRight) {
+            scrollLeftButton.classList.add('bounce-left');
+        } else if (showRight && !showLeft) {
+            scrollRightButton.classList.add('bounce-right');
+        }
     }
 
     scrollLeftButton.addEventListener('click', () => {
         if (currentCardIndex > 0) {
-        scrollToCard(currentCardIndex - 1);
+            scrollToCard(currentCardIndex - 1);
         }
     });
 
     scrollRightButton.addEventListener('click', () => {
         if (currentCardIndex < cards.length - 1) {
-        scrollToCard(currentCardIndex + 1);
+            scrollToCard(currentCardIndex + 1);
         }
     });
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
-        scrollToCard(currentCardIndex - 1);
+            scrollToCard(currentCardIndex - 1);
         } else if (e.key === 'ArrowRight') {
-        scrollToCard(currentCardIndex + 1);
+            scrollToCard(currentCardIndex + 1);
         }
     });
 
     window.addEventListener('resize', () => {
         if (cards.length > 0) {
-        cards[currentCardIndex].scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+            cards[currentCardIndex].scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
         }
         updateScrollIndicators();
     });
 
     projectRow.addEventListener('scroll', () => {
         const scrollLeft = projectRow.scrollLeft;
-        const cardWidths = cards.map(card => card.offsetLeft);
+        const cardCenters = cards.map(card => card.offsetLeft + card.offsetWidth / 2);
         const middle = scrollLeft + projectRow.offsetWidth / 2;
 
-        const closest = cardWidths.reduce((closestIdx, left, idx) => {
-        return Math.abs(left + cards[idx].offsetWidth / 2 - middle) <
-                Math.abs(cardWidths[closestIdx] + cards[closestIdx].offsetWidth / 2 - middle)
-            ? idx
-            : closestIdx;
+        const closest = cardCenters.reduce((closestIdx, center, idx) => {
+            return Math.abs(center - middle) <
+                Math.abs(cardCenters[closestIdx] - middle)
+                ? idx
+                : closestIdx;
         }, 0);
 
         currentCardIndex = closest;
