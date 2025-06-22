@@ -537,13 +537,17 @@ h2.aqua-title {
         flex-direction: column;
         gap: 20px;
     }
+    
+    .project-row {
+        padding: 20px;
+    }
 
     .project-card {
-        width: 60%;
+        width: 50%;
         margin: 0 auto;
     }
     
     .project-card .aqua-title.no-stroke {
-        font-size: 28px;
+        font-size: 24px;
     }
 }
