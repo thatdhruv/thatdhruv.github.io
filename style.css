@@ -3,9 +3,9 @@ body {
     height: 100svh;
     background: radial-gradient(
         circle at center,
-        rgba(44, 44, 46, 1) 0%,
-        rgba(50, 50, 52, 0.95) 30%,
-        rgba(40, 40, 42, 0.9) 60%,
+        rgba(50, 50, 52, 0.95) 0%,
+        rgba(40, 40, 42, 0.9) 30%,
+        rgba(44, 44, 46, 1) 60%,
         rgba(28, 28, 30, 1) 100%);
     background-size: 600% 600%;
     animation: shift 15s ease infinite;
@@ -22,8 +22,8 @@ body {
     padding: 10px;
     border: none;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #000;
+    background: rgba(255, 255, 255, 0.2);
+    color: black;
     font-size: 18px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -34,7 +34,7 @@ body {
 }
 
 .aqua-button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .aqua-button:active {
@@ -86,7 +86,7 @@ body {
     color: rgba(255, 255, 255, 0.7);
     text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
     font-weight: 300;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 1.6;
     text-align: center;
     max-width: 700px;
@@ -238,7 +238,7 @@ body {
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -316,6 +316,126 @@ body {
     border-bottom: 12px solid black;
 }
 
+.scroll-indicator.side {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 999px;
+    cursor: pointer;
+    pointer-events: auto;
+    gap: 4px;
+}
+
+.scroll-indicator.side.left {
+    left: 10px;
+}
+
+.scroll-indicator.side.right {
+    right: 10px;
+}
+
+.scroll-indicator.side .triangle {
+    width: 0;
+    height: 0;
+}
+
+.scroll-indicator.side.left .triangle {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 12px solid black;
+}
+
+.scroll-indicator.side.right .triangle {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 12px solid black;
+}
+
+.scroll-indicator.side.hidden {
+    display: none;
+}
+
+.project-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+
+.project-row {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding: 40px 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-padding: 0 20px;
+    scrollbar-width: none;
+}
+
+.project-row::-webkit-scrollbar {
+    display: none;
+}
+
+.project-card {
+    flex: 0 0 300px;
+    scroll-snap-align: center;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+    pointer-events: auto;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.project-card .aqua-button.project-button {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px 20px;
+    margin-top: auto;
+    font-weight: 600;
+}
+
+.project-card .aqua-title.no-stroke {
+    font-size: 36px;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none;
+    color: rgba(255, 255, 255, 0.85);
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+}
+
+.project-card .aqua-text {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+}
+
 section {
     position: relative;
     height: 100vh;
@@ -330,11 +450,11 @@ section {
 }
 
 h1.aqua-title {
-    font-size: 72px;
+    font-size: 80px;
 }
 
 h2.aqua-title {
-    font-size: 64px;
+    font-size: 72px;
 }
 
 @keyframes shift {
@@ -364,7 +484,7 @@ h2.aqua-title {
         background: rgba(255, 255, 255, 0.1); 
     }
     50% {
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.4);
     }
 }
 
@@ -400,13 +520,10 @@ h2.aqua-title {
 }
 
 @media (max-width: 600px) {
-    body {
-        background: radial-gradient(
-            circle at center,
-            rgba(50, 50, 52, 0.95) 0%,
-            rgba(40, 40, 42, 0.9) 100%);
-        background-size: cover;
+    .aqua-text {
+        font-size: 18px;
     }
+    
     h1.aqua-title {
         font-size: 48px;
     }
@@ -427,5 +544,24 @@ h2.aqua-title {
     .button-group {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .project-scroll-wrapper {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .project-row {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .project-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .scroll-indicator.side {
+        display: none;
     }
 }
