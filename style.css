@@ -547,7 +547,9 @@ h2.aqua-title {
     }
     
     .project-row {
+        gap: 20px;
         padding: 0;
+        scroll-padding: 0;
     }
 
     .project-card {
