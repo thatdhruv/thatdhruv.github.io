@@ -1,127 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-        <title>Dhruv Trivedi</title>
-        <link rel="icon" href="dt-designer.png" type="image/png" />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <nav class="aqua-navbar">
-            <div class="nav-left" id="scrollup">
-                <img src="dt-designer.png" alt="DT" class="logo" />
-                <p>Designed by<br><b>Dhruv Trivedi</b></p>
-            </div>
-            <div class="nav-center">
-                <h1 class="nav-title"></h1>
-            </div>
-            <div class="nav-right">
-                <div class="hamburger" id="hamburger" aria-label="menu" role="button" tabindex="0">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="dropdown" id="dropdown">
-                    <button class="aqua-button nav-link" data-target="home">Home</button>
-                    <button class="aqua-button nav-link" data-target="about">About Me</button>
-                    <button class="aqua-button nav-link" data-target="projects">Projects</button>
-                    <button class="aqua-button nav-link" data-target="contact">Contact</button>
-                </div>
-            </div>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Dhruv Trivedi | Software Engineer</title>
+    <link rel="icon" href="dt-designer.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#home" class="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 1000 1000" aria-label="DT" role="img" style="width:40px;height:40px;fill:currentColor;flex-shrink:0;">
+          <path fill-rule="evenodd" d="M292.722,796.139q-59.4,0-109.456-20.752T96.8,717.2q-36.411-37.433-56.763-89.519T19.691,512.529V487.708q0-62.655,20.345-114.949T96.8,282.834q36.421-37.632,86.873-58.39T294.35,203.692H485.186V796.139H292.722Zm1.628-482.177q-63.068,0-96.029,43.538T165.362,486.9v25.634q0,86.27,32.959,130.005t94.4,43.742h49.642V313.962H294.35Z" />
+          <path d="M980.308,203.413h-495.2v110.27H659.67V795.861H802.492V313.683H980.308V203.413Z" />
+        </svg>
+        <span class="brand-text">
+          <span class="designed-by"><span>Designed by</span></span>
+          <span class="name"><span>Dhruv Trivedi</span></span>
+        </span>
+      </a>
 
-        <div class="scroll-container">
-            <section id="home" class="main-content aqua-intro">
-                <h1 class="aqua-title">Minimalism. Maximized.</h1>
-                <div class="button-group intro-delay">
-                    <button class="aqua-button" onclick="scrollToSection('projects')">Projects</button>
-                    <button class="aqua-button aqua-button-focused" id="button-resume">Get Resume</button>
-                </div>
-                <div class="scroll-indicator-container intro-delay">
-                    <div class="scroll-indicator arrow down bounce" data-target="about">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="triangle"></div>
-                    </div>
-                </div>
-            </section>
+      <div class="nav-links" id="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-            <section id="about">
-                <h2 class="aqua-title">About Me</h2>
-                <p class="aqua-text">Hello! I'm Dhruv Trivedi. I combine technology with creativity to build engaging digital experiences.</p>
-                <div class="scroll-indicator-container">
-                    <div class="scroll-indicator arrow up" data-target="home">
-                        <div class="triangle"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                    <div class="scroll-indicator arrow down" data-target="projects">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="triangle"></div>
-                    </div>
-                </div>
-            </section>
+      <div class="nav-actions">
+        <a href="resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+      </div>
 
-            <section id="projects">
-                <h2 class="aqua-title">Projects</h2>
-                <div class="project-scroll-wrapper">
-                    <div class="scroll-indicator left" id="scroll-left">
-                        <div class="triangle"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                    <div class="project-row" id="project-row">
-                        <div class="project-card">
-                            <h3 class="aqua-title no-stroke">mnml</h3>
-                            <p class="aqua-text">A lightweight and customizable Arch setup designed for minimalism enthusiasts.</p>
-                            <button class="aqua-button project-button" onclick="window.open('https://github.com/thatdhruv/mnml', '_blank')">Explore</button>
-                        </div>
-                        <div class="project-card">
-                            <h3 class="aqua-title no-stroke">Hello OBJ-C</h3>
-                            <p class="aqua-text">A minimal macOS app written in Objective-C, with the UI built entirely programmatically.</p>
-                            <button class="aqua-button project-button" onclick="window.open('https://github.com/thatdhruv/hello-objc', '_blank')">Explore</button>
-                        </div>
-                        <div class="project-card">
-                            <h3 class="aqua-title no-stroke">Aqua 2</h3>
-                            <p class="aqua-text">A modern take on the Aqua user interface, reimagined with liquid glass.</p>
-                            <button class="aqua-button project-button">Coming Soon</button>
-                        </div>
-                    </div>
-                    <div class="scroll-indicator right" id="scroll-right">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="triangle"></div>
-                    </div>
-                </div>
-                <div class="scroll-indicator-container">
-                    <div class="scroll-indicator arrow up" data-target="about">
-                        <div class="triangle"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                    <div class="scroll-indicator arrow down" data-target="contact">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="triangle"></div>
-                    </div>
-                </div>
-            </section>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-            <section id="contact">
-                <h2 class="aqua-title">Contact</h2>
-                <p class="aqua-text">You can reach me at: <a href="mailto:thatdhruv@gmail.com">thatdhruv@gmail.com</a></p>
-                <div class="scroll-indicator-container">
-                    <div class="scroll-indicator arrow up" data-target="projects">
-                        <div class="triangle"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                </div>
-            </section>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+
+    <section id="home">
+      <p class="hero-eyebrow">Software Engineer</p>
+      <h1 class="hero-headline">I make software that "just works".</h1>
+      <p class="hero-sub">
+        I build reliable, maintainable software - from low-level C daemons
+        to full-stack web apps and native experiences.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="aqua-button">View Projects</a>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="aqua-button aqua-button-focused">Get Resume</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <p class="section-label reveal">About Me</p>
+      <h2 class="section-headline reveal">Hello, I'm Dhruv.</h2>
+      <p class="section-body reveal">
+        I'm a software engineer who cares about correctness, clarity, and
+        code that still makes sense six months later - whether that's a
+        POSIX daemon in C, a SwiftUI app, or a containerized Node.js backed.
+      </p>
+    </section>
+
+    <section id="projects">
+      <div class="projects-header">
+        <p class="section-label reveal">Projects</p>
+        <h2 class="section-headline reveal">Things I've built.</h2>
+      </div>
+
+      <div class="projects-grid stagger">
+        <div class="project-card reveal">
+          <h3>Circulate</h3>
+          <p class="stack">React · Node.js · Express · MongoDB · Docker</p>
+          <p class="desc">A containerized full-stack library management system with user enrollment, book inventry, loan lifecycle tracking, and a Reactdashboad for live system metrics.</p>
+          <a href="https://github.com/thatdhruv" target="_blank" rel="noopener" class="scroll-ind" aria-label="Explore on GitHub">
+            <div class="dot"></div><div class="dot"></div><div class="tri"></div>
+          </a>
         </div>
+        
+        <div class="project-card reveal">
+          <h3>Hydrate</h3>
+          <p class="stack">Swift · SwiftUI · WidgetKit</p>
+          <p class="desc">A minimal iOS hydration tracker with interactive lock-screen widgets, App Groups data sync, and a smart notification system that auto-cancels when your daily goal is hit.</p>
+          <a href="https://github.com/thatdhruv" target="_blank" rel="noopener" class="scroll-ind" aria-label="Explore on GitHub">
+            <div class="dot"></div><div class="dot"></div><div class="tri"></div>
+          </a>
+        </div>
+        
+        <div class="project-card reveal">
+          <h3>now</h3>
+          <p class="stack">C · POSIX</p>
+          <p class="desc">A modular command-line TODO maager with a custom binary format, a full inline markdown parser supporting 10 syntax forms, and a double-fork POSIX daemon for adaptive deadline notifications.</p>
+          <a href="https://github.com/thatdhruv" target="_blank" rel="noopener" class="scroll-ind" aria-label="Explore on GitHub">
+            <div class="dot"></div><div class="dot"></div><div class="tri"></div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        <script src="script.js"></script>
-    </body>
+    <section id="contact">
+      <p class="section-label reveal">Contact</p>
+      <h2 class="section-headline reveal">Let's connect.</h2>
+      <p class="section-body reveal">
+        Ping me at <a href="mailto:thatdhruv@gmail.com">thatdhruv@gmail.com</a>
+      </p>
+      <div class="contact-links reveal">
+        <a href="https://linkedin.com/in/thatdhruv" target="_blank" rel="noopener" class="aqua-button">LinkedIn</a>
+        <a href="https://github.com/thatdhruv" target="_blank" rel="noopener" class="aqua-button">GitHub</a>
+      </div>
+    </section>
+
+    <footer>
+      <span class="brand-text">
+        <span class="designed-by"><span>Designed by</span></span>
+        <span class="name"><span>Dhruv Trivedi</span></span>
+      </span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
