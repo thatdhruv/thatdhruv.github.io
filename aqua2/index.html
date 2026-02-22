@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aqua 2 &mdash; Aqua, reimagined.</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="menubar">
+      <a href="#hero" class="menubar-brand">Aqua 2</a>
+      <div class="menubar-links">
+        <a href="#installation">Installation</a>
+        <a href="#ui-components">UI Components</a>
+      </div>
+      <a href="https://github.com/thatdhruv/aqua2/" target="_blank" rel="noopener" class="menubar-action">GitHub <svg viewBox="0 0 14 8" fill="none" width="15" height="10"><circle cx="3" cy="4" r="1.5" fill="currentColor"/><circle cx="6.8" cy="4" r="1.5" fill="currentColor"/><polygon points="10,0 14,4 10,8" fill="currentColor"/></svg></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="menu" id="menu">
+      <a href="#installation" onclick="closeMenu()">Installation</a>
+      <a href="#ui-components" onclick="closeMenu()">UI Components</a>
+      <a href="https://github.com/thatdhruv/aqua2/" target="_blank" rel="noopener" onclick="closeMenu()">GitHub <svg viewBox="0 0 14 8" fill="none" width="15" height="10"><circle cx="3" cy="4" r="1.5" fill="currentColor"/><circle cx="6.8" cy="4" r="1.5" fill="currentColor"/><polygon points="10,0 14,4 10,8" fill="currentColor"/></svg></a>
+    </div>
+
+    <section id="hero">
+      <p class="hero-eyebrow">Aqua 2</p>
+      <h1 class="hero-headline">Aqua,<br><span class="ghost">reimagined.</span></h1>
+      <p class="hero-sub">Aqua 2 is a self-contained UI framework for the web, inspired by Apple's <a href="https://en.wikipedia.org/wiki/Aqua_(user_interface)" target="_blank" rel="noopener">AQUA</a> design language.</p>
+      <div class="hero-actions">
+        <a href="https://github.com/thatdhruv/aqua2/" target="_blank" rel="noopener" class="aqua-button">View on GitHub</a>
+        <a href="https://cdn.jsdelivr.net/gh/thatdhruv/aqua2@master/aqua2.js" download class="aqua-button-focused">Download aqua2.js</a>
+      </div>
+    </section>
+
+    <section id="installation">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Installation</p>
+        <h2 class="section-title">Ong tag. That's it.</h2>
+        <p class="section-description">Aqua 2 ships as a single Javascript file &mdash; <code>aqua2.js</code> &mdash; that injects its own styles and activates all interactive components automatically.</p>
+      </div>
+
+      <div class="section-wrap">
+        <div class="glass-card tabbed-card reveal">
+          <div class="card-intro">
+            <p class="card-intro-title">Add <code>aqua2.js</code> to your project</p>
+            <p class="card-intro-body">Drop in the local file for production or reference the jsDelivr CDN for rapid prototyping.</p>
+          </div>
+
+          <div class="tab-content-area" style="min-height: 210px">
+            <div class="tab-pane active" id="installation-tab-local">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">Local file</p>
+                <p class="tab-pane-body">Download <code>aqua2.js</code>, place it in your project, and then add a single script tag before <code>&lt;/body&gt;</code>.</p>
+                <div class="code-block">
+                  <div class="code-block-bar">
+                    <span class="code-lang">HTML</span><button class="copy-button" onclick="copyBlock(this)">Copy</button>
+                  </div>
+<pre><code><span class="token-tag">&lt;script</span> <span class="token-attribute">src</span>=<span class="token-string">"aqua2.js"</span><span class="token-tag">&gt;&lt;/script&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-pane" id="installation-tab-jsdelivr">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">jsDelivr</p>
+                <p class="tab-pane-body">Reference directly from jsDelivr. Although not suitable for high-traffic production sites, it's great for quick demos just like this one.</p>
+                <div class="code-block">
+                  <div class="code-block-bar">
+                    <span class="code-lang">HTML</span><button class="copy-button" onclick="copyBlock(this)">Copy</button>
+                  </div>
+<pre><code><span class="token-tag">&lt;script</span> <span class="token-attribute">src</span>=<span class="token-string">"https://cdn.jsdelivr.net/gh/thatdhruv/aqua2@master/aqua2.js"</span><span class="token-tag">&gt;&lt;/script&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="aqua-tabview-wrap">
+            <div class="aqua-tabview" id="installation-tabview" data-content-prefix="installation-tab">
+              <div class="aqua-tabview-indicator"></div>
+              <div class="aqua-tabview-tab active" data-tab="local">Local</div>
+              <div class="aqua-tabview-tab" data-tab="jsdelivr">jsDelivr CDN</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ui-components">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">UI Components</p>
+        <h2 class="section-title">Familiar at its core. Modern in its form.</h2>
+        <p class="section-description">"One of the design goals was when you saw it you wanted to lick it"<br>&mdash; Steve Jobs</p>
+      </div>
+
+      <div class="section-wrap">
+        <div class="glass-card tabbed-card reveal">
+          <div class="card-intro">
+            <p class="card-intro-title">Component Reference</p>
+            <p class="card-intro-body">Click any tab to see a live demo and copy the HTML. Every class is a standalone drop-in — no wrappers required except where noted.</p>
+          </div>
+
+          <div class="tab-content-area" style="min-height: 470px">
+            <div class="tab-pane active" id="components-tab-buttons">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">Push Buttons — all variants</p>
+                <p class="tab-pane-body">Glass pill. Flashes system blue on press. <code>aqua-button-focused</code> breathes blue — the default dialog action. Circular buttons suit icon/glyph actions; square buttons suit image thumbnails or larger glyphs. All shapes have a graphite twin (see Graphite tab).</p>
+                <div class="preview" style="gap:10px;flex-wrap:wrap;align-items:center">
+                  <button class="aqua-button">OK</button>
+                  <button class="aqua-button">Cancel</button>
+                  <button class="aqua-button-focused">Continue</button>
+                  <span style="width:1px;height:24px;background:var(--card-border);flex-shrink:0"></span>
+                  <button class="aqua-button-circular" title="Previous"><svg viewBox="0 0 14 8" fill="none"><polygon points="4,0 0,4 4,8" fill="currentColor"/><circle cx="7.2" cy="4" r="1.5" fill="currentColor"/><circle cx="11" cy="4" r="1.5" fill="currentColor"/></svg></button>
+                  <button class="aqua-button-circular" title="Next"><svg viewBox="0 0 14 8" fill="none"><circle cx="3" cy="4" r="1.5" fill="currentColor"/><circle cx="6.8" cy="4" r="1.5" fill="currentColor"/><polygon points="10,0 14,4 10,8" fill="currentColor"/></svg></button>
+                  <button class="aqua-button-circular-focused" title="Circular focused"><svg viewBox="0 0 14 8" fill="none"><polygon points="4,0 0,4 4,8" fill="currentColor"/><circle cx="7.2" cy="4" r="1.5" fill="currentColor"/><circle cx="11" cy="4" r="1.5" fill="currentColor"/></svg></button>
+                  <span style="width:1px;height:24px;background:var(--card-border);flex-shrink:0"></span>
+                  <button class="aqua-button-square" title="Square"><b style="font-size: 25px">+</b></button>
+                  <button class="aqua-button-square-focused" title="Square focused"><b style="font-size: 25px">+</b></button>
+                </div>
+                <div class="code-block">
+                  <div class="code-block-bar"><span class="code-lang">HTML</span><button class="copy-button" onclick="copyBlock(this)">Copy</button></div>
+<pre><code><span class="token-tag">&lt;button</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-button"</span><span class="token-tag">&gt;</span>Cancel<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-button-focused"</span><span class="token-tag">&gt;</span>Continue<span class="token-tag">&lt;/button&gt;</span>
+
+<span class="token-comment">&lt;!-- Circular (icon/glyph) --&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-button-circular"</span><span class="token-tag">&gt;</span><span class="token-comment">&lt;!-- SVG --&gt;</span><span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-button-circular-focused"</span><span class="token-tag">&gt;</span><span class="token-comment">&lt;!-- SVG --&gt;</span><span class="token-tag">&lt;/button&gt;</span>
+
+<span class="token-comment">&lt;!-- Square (image/larger glyph) --&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-button-square"</span><span class="token-tag">&gt;</span><span class="token-comment">&lt;!-- SVG / img --&gt;</span><span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-button-square-focused"</span><span class="token-tag">&gt;</span><span class="token-comment">&lt;!-- SVG / img --&gt;</span><span class="token-tag">&lt;/button&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="components-tab-radio">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">aqua-radio</p>
+                <p class="tab-pane-body">On selection the shell fills with system blue and a small glass dot springs in at centre. All options in a group must share the same <code>name</code>.</p>
+                <div class="preview" style="gap:16px;align-items:center">
+                  <label class="aqua-radio"><input type="radio" name="ref-r1" checked /><span class="aqua-radio-control"></span><span class="aqua-radio-label">Option A</span></label>
+                  <label class="aqua-radio"><input type="radio" name="ref-r1" /><span class="aqua-radio-control"></span><span class="aqua-radio-label">Option B</span></label>
+                  <label class="aqua-radio"><input type="radio" name="ref-r1" /><span class="aqua-radio-control"></span><span class="aqua-radio-label">Option C</span></label>
+                </div>
+                <div class="code-block">
+                  <div class="code-block-bar"><span class="code-lang">HTML</span><button class="copy-button" onclick="copyBlock(this)">Copy</button></div>
+<pre><code><span class="token-tag">&lt;label</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-radio"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;input</span> <span class="token-attribute">type</span>=<span class="token-string">"radio"</span> <span class="token-attribute">name</span>=<span class="token-string">"group"</span> <span class="token-tag">/&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-radio-control"</span><span class="token-tag">&gt;&lt;/span&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-radio-label"</span><span class="token-tag">&gt;</span>Option<span class="token-tag">&lt;/span&gt;</span>
+<span class="token-tag">&lt;/label&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="components-tab-checkbox">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">aqua-checkbox</p>
+                <p class="tab-pane-body">Glass rounded square that springs on check, drawing the checkmark stroke by stroke with a subtle Aqua pop. The two inner <code>&lt;span&gt;</code>s form the animated strokes — don't omit them.</p>
+                <div class="preview" style="gap:16px;align-items:center">
+                  <label class="aqua-checkbox"><input type="checkbox" checked /><span class="aqua-checkbox-control"><span class="aqua-checkbox-left"></span><span class="aqua-checkbox-right"></span></span><span class="aqua-checkbox-label">Checked</span></label>
+                  <label class="aqua-checkbox"><input type="checkbox" /><span class="aqua-checkbox-control"><span class="aqua-checkbox-left"></span><span class="aqua-checkbox-right"></span></span><span class="aqua-checkbox-label">Unchecked</span></label>
+                  <label class="aqua-checkbox"><input type="checkbox" checked /><span class="aqua-checkbox-control"><span class="aqua-checkbox-left"></span><span class="aqua-checkbox-right"></span></span><span class="aqua-checkbox-label">Option C</span></label>
+                </div>
+                <div class="code-block">
+                  <div class="code-block-bar"><span class="code-lang">HTML</span><button class="copy-button" onclick="copyBlock(this)">Copy</button></div>
+<pre><code><span class="token-tag">&lt;label</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-checkbox"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;input</span> <span class="token-attribute">type</span>=<span class="token-string">"checkbox"</span> <span class="token-tag">/&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-checkbox-control"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;span</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-checkbox-left"</span><span class="token-tag">&gt;&lt;/span&gt;</span>
+    <span class="token-tag">&lt;span</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-checkbox-right"</span><span class="token-tag">&gt;&lt;/span&gt;</span>
+  <span class="token-tag">&lt;/span&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-checkbox-label"</span><span class="token-tag">&gt;</span>Option<span class="token-tag">&lt;/span&gt;</span>
+<span class="token-tag">&lt;/label&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="components-tab-inputs">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">aqua-input / aqua-select</p>
+                <p class="tab-pane-body">Pill text fields with a blue focus ring. The <code>aqua-select</code> morphs from a pill into a rounded panel on open — the right cap shows the variant colour (blue or graphite) with up/down triangles indicating it's a pop-up control.</p>
+                <div class="preview" style="flex-direction:column;align-items:stretch;gap:10px">
+                  <div class="aqua-input-wrap"><input class="aqua-input" type="text" placeholder="aqua-input — click to focus…" /></div>
+                  <div class="aqua-select" style="width:100%">
+                    <div class="aqua-select-trigger">
+                      <div class="aqua-select-value-wrap"><span class="aqua-select-value">aqua-select — choose…</span></div>
+                      <div class="aqua-select-cap"><svg viewBox="0 0 10 14" fill="none"><polygon points="5,1 9,5.5 1,5.5" fill="rgba(255,255,255,0.9)"/><polygon points="5,13 9,8.5 1,8.5" fill="rgba(255,255,255,0.9)"/></svg></div>
+                    </div>
+                    <div class="aqua-select-panel">
+                      <div class="aqua-select-panel-header">
+                        <div class="aqua-select-value-wrap"><span class="aqua-select-value">aqua-select — choose…</span></div>
+                        <div class="aqua-select-cap"><svg viewBox="0 0 10 14" fill="none"><polygon points="5,1 9,5.5 1,5.5" fill="rgba(255,255,255,0.9)"/><polygon points="5,13 9,8.5 1,8.5" fill="rgba(255,255,255,0.9)"/></svg></div>
+                      </div>
+                      <div class="aqua-select-option" data-value="1">Option 1</div>
+                      <div class="aqua-select-option" data-value="2">Option 2</div>
+                      <div class="aqua-select-option" data-value="3">Option 3</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="code-block">
+                  <div class="code-block-bar"><span class="code-lang">HTML</span><button class="copy-button" onclick="copyBlock(this)">Copy</button></div>
+<pre><code><span class="token-tag">&lt;input</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-input"</span> <span class="token-attribute">type</span>=<span class="token-string">"text"</span> <span class="token-attribute">placeholder</span>=<span class="token-string">"…"</span> <span class="token-tag">/&gt;</span>
+
+<span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-select"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-select-trigger"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-select-value-wrap"</span><span class="token-tag">&gt;</span>
+      <span class="token-tag">&lt;span</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-select-value"</span><span class="token-tag">&gt;</span>Choose…<span class="token-tag">&lt;/span&gt;</span>
+    <span class="token-tag">&lt;/div&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-select-cap"</span><span class="token-tag">&gt;</span><span class="token-comment">&lt;!-- ▲▿ SVG --&gt;</span><span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-select-panel"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-select-option"</span> <span class="token-attribute">data-value</span>=<span class="token-string">"a"</span><span class="token-tag">&gt;</span>Option A<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="components-tab-slider">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">aqua-slider</p>
+                <p class="tab-pane-body">Pill-track slider with a pill-shaped white thumb. The fill grows from the left in blue. Thumb goes translucent and scales up while dragging — mirroring the tab indicator. Click anywhere on the track to spring the thumb to that position.</p>
+                <div class="preview" style="align-items:stretch;flex-direction:column;gap:6px">
+                  <div class="aqua-slider" data-min="0" data-max="100" data-value="40">
+                    <div class="aqua-slider-track">
+                      <div class="aqua-slider-fill"></div>
+                      <div class="aqua-slider-thumb"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="code-block">
+                  <div class="code-block-bar"><span class="code-lang">HTML</span><button class="copy-button" onclick="copyBlock(this)">Copy</button></div>
+<pre><code><span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-slider"</span>
+     <span class="token-attribute">data-min</span>=<span class="token-string">"0"</span> <span class="token-attribute">data-max</span>=<span class="token-string">"100"</span> <span class="token-attribute">data-value</span>=<span class="token-string">"40"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-slider-track"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-slider-fill"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-slider-thumb"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="components-tab-progress">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">aqua-progress / aqua-progress-indeterminate</p>
+                <p class="tab-pane-body">Determinate bars show fixed progress with animated water-rib texture. Set width via <code>data-value</code> (0–100). Indeterminate bars use the classic Aqua backslash barber pole.</p>
+                <div class="preview" style="flex-direction:column;gap:16px;align-items:stretch">
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Determinate — Blue</p>
+                    <div class="aqua-progress" data-value="65">
+                      <div class="aqua-progress-fill" style="width:65%"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Indeterminate</p>
+                    <div class="aqua-progress-indeterminate"></div>
+                  </div>
+                </div>
+                <div class="code-block">
+                  <div class="code-block-bar"><span class="code-lang">HTML</span><button class="copy-button" onclick="copyBlock(this)">Copy</button></div>
+<pre><code><span class="token-comment">&lt;!-- Determinate --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-progress"</span> <span class="token-attribute">data-value</span>=<span class="token-string">"65"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-progress-fill"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+
+<span class="token-comment">&lt;!-- Indeterminate --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-progress-indeterminate"</span><span class="token-tag">&gt;&lt;/div&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="components-tab-scrollbar">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">aqua-scrollbar</p>
+                <p class="tab-pane-body">Pill-shaped scrollbar with a textured thumb (same dim-notch pattern as the determinate progress bar). Two arrow buttons: placed <em>together</em> at the right end (default) or one at <em>each end</em> via <code>aqua-scrollbar-buttons-end</code>. Drag the thumb or click the track to scroll.</p>
+                <div class="preview" style="flex-direction:column;gap:16px;align-items:stretch">
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Blue — buttons together (right end)</p>
+                    <div class="aqua-scrollbar" id="sb-demo-1" data-value="30" data-thumb-size="30">
+                      <div class="aqua-scrollbar-track"><div class="aqua-scrollbar-thumb"></div></div>
+                      <div class="aqua-scrollbar-buttons">
+                        <button class="aqua-scrollbar-button aqua-scrollbar-previous" title="Previous"><svg viewBox="0 0 8 7" fill="none"><polygon points="7,0.5 1,3.5 7,6.5" fill="currentColor"/></svg></button>
+                        <button class="aqua-scrollbar-button aqua-scrollbar-next" title="Next"><svg viewBox="0 0 8 7" fill="none"><polygon points="1,0.5 7,3.5 1,6.5" fill="currentColor"/></svg></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Blue — buttons at each end</p>
+                    <div class="aqua-scrollbar aqua-scrollbar-buttons-end" id="sb-demo-2" data-value="55" data-thumb-size="30">
+                      <button class="aqua-scrollbar-button aqua-scrollbar-previous" title="Previous"><svg viewBox="0 0 8 7" fill="none"><polygon points="7,0.5 1,3.5 7,6.5" fill="currentColor"/></svg></button>
+                      <div class="aqua-scrollbar-track"><div class="aqua-scrollbar-thumb"></div></div>
+                      <button class="aqua-scrollbar-button aqua-scrollbar-next" title="Next"><svg viewBox="0 0 8 7" fill="none"><polygon points="1,0.5 7,3.5 1,6.5" fill="currentColor"/></svg></button>
+                    </div>
+                  </div>
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Graphite — buttons together</p>
+                    <div class="aqua-scrollbar graphite-scrollbar" id="sb-demo-3" data-value="70" data-thumb-size="30">
+                      <div class="aqua-scrollbar-track"><div class="aqua-scrollbar-thumb"></div></div>
+                      <div class="aqua-scrollbar-buttons">
+                        <button class="aqua-scrollbar-button aqua-scrollbar-previous" title="Previous"><svg viewBox="0 0 8 7" fill="none"><polygon points="7,0.5 1,3.5 7,6.5" fill="currentColor"/></svg></button>
+                        <button class="aqua-scrollbar-button aqua-scrollbar-next" title="Next"><svg viewBox="0 0 8 7" fill="none"><polygon points="1,0.5 7,3.5 1,6.5" fill="currentColor"/></svg></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="code-block">
+                  <div class="code-block-bar"><span class="code-lang">HTML</span><button class="copy-button" onclick="copyBlock(this)">Copy</button></div>
+<pre><code><span class="token-comment">&lt;!-- Buttons together at right end (default) --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar"</span> <span class="token-attribute">data-value</span>=<span class="token-string">"30"</span> <span class="token-attribute">data-thumb-size</span>=<span class="token-string">"30"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar-track"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar-thumb"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar-buttons"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;button</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar-button aqua-scrollbar-previous"</span><span class="token-tag">&gt;</span><span class="token-comment">&lt;!-- ◁ SVG --&gt;</span><span class="token-tag">&lt;/button&gt;</span>
+    <span class="token-tag">&lt;button</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar-button aqua-scrollbar-next"</span><span class="token-tag">&gt;</span><span class="token-comment">&lt;!-- ▷ SVG --&gt;</span><span class="token-tag">&lt;/button&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+
+<span class="token-comment">&lt;!-- Buttons at each end --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar aqua-scrollbar-buttons-end"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar-button aqua-scrollbar-previous"</span><span class="token-tag">&gt;</span><span class="token-comment">&lt;!-- ◁ --&gt;</span><span class="token-tag">&lt;/button&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar-track"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar-thumb"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-scrollbar-button aqua-scrollbar-next"</span><span class="token-tag">&gt;</span><span class="token-comment">&lt;!-- ▷ --&gt;</span><span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="components-tab-tabview">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">aqua-tabview</p>
+                <p class="tab-pane-body">Frosted-glass segmented control. The indicator slides with a spring and can be dragged. On mobile it scrolls horizontally, centring the active tab with neighbours peeking at the edges. Mark a tab <code>disabled</code> to dim and block it.</p>
+                <div class="preview">
+                  <div class="aqua-tabview" id="demo-tabview">
+                    <div class="aqua-tabview-indicator"></div>
+                    <div class="aqua-tabview-tab active" data-tab="a">Option A</div>
+                    <div class="aqua-tabview-tab" data-tab="b">Option B</div>
+                    <div class="aqua-tabview-tab" data-tab="c">Option C</div>
+                    <div class="aqua-tabview-tab disabled" data-tab="d">Disabled</div>
+                  </div>
+                </div>
+                <div class="code-block">
+                  <div class="code-block-bar"><span class="code-lang">HTML</span><button class="copy-button" onclick="copyBlock(this)">Copy</button></div>
+<pre><code><span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-tabview-wrap"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-tabview"</span> <span class="token-attribute">data-content-prefix</span>=<span class="token-string">"my-tab"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-tabview-indicator"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-tabview-tab active"</span> <span class="token-attribute">data-tab</span>=<span class="token-string">"one"</span><span class="token-tag">&gt;</span>One<span class="token-tag">&lt;/div&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-tabview-tab"</span>        <span class="token-attribute">data-tab</span>=<span class="token-string">"two"</span><span class="token-tag">&gt;</span>Two<span class="token-tag">&lt;/div&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"aqua-tabview-tab disabled"</span> <span class="token-attribute">data-tab</span>=<span class="token-string">"three"</span><span class="token-tag">&gt;</span>Disabled<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+<span class="token-comment">&lt;!-- Content panels --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"tab-pane active"</span> <span class="token-attribute">id</span>=<span class="token-string">"my-tab-one"</span><span class="token-tag">&gt;</span><span class="token-comment">…</span><span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attribute">class</span>=<span class="token-string">"tab-pane"</span>        <span class="token-attribute">id</span>=<span class="token-string">"my-tab-two"</span><span class="token-tag">&gt;</span><span class="token-comment">…</span><span class="token-tag">&lt;/div&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="components-tab-graphite">
+              <div class="tab-pane-inner">
+                <p class="tab-pane-title">Graphite palette — all components</p>
+                <p class="tab-pane-body">Every component has a graphite twin — swap <code>aqua-</code> for <code>graphite-</code> on the wrapper class. The graphite palette uses neutral grey instead of system blue, suited for secondary UI elements or apps preferring a minimal accent colour.</p>
+                <div class="preview" style="flex-direction:column;gap:16px;align-items:stretch">
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Buttons</p>
+                    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                      <button class="graphite-button">OK</button>
+                      <button class="graphite-button">Cancel</button>
+                      <button class="graphite-button-focused">Apply</button>
+                      <button class="graphite-button-circular" title="Previous"><svg viewBox="0 0 14 8" fill="none"><polygon points="4,0 0,4 4,8" fill="currentColor"/><circle cx="7.2" cy="4" r="1.5" fill="currentColor"/><circle cx="11" cy="4" r="1.5" fill="currentColor"/></svg></button>
+                      <button class="graphite-button-circular" title="Next"><svg viewBox="0 0 14 8" fill="none"><circle cx="3" cy="4" r="1.5" fill="currentColor"/><circle cx="6.8" cy="4" r="1.5" fill="currentColor"/><polygon points="10,0 14,4 10,8" fill="currentColor"/></svg></button>
+                      <button class="graphite-button-square" title="Square"><b style="font-size: 25px">+</b></button>
+                      <button class="graphite-button-square-focused" title="Square focused"><b style="font-size: 25px">+</b></button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Radio</p>
+                    <div style="display:flex;gap:14px">
+                      <label class="graphite-radio"><input type="radio" name="gfx-r" checked /><span class="aqua-radio-control"></span><span class="aqua-radio-label">Option A</span></label>
+                      <label class="graphite-radio"><input type="radio" name="gfx-r" /><span class="aqua-radio-control"></span><span class="aqua-radio-label">Option B</span></label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Checkbox</p>
+                    <div style="display:flex;gap:14px">
+                      <label class="graphite-checkbox"><input type="checkbox" checked /><span class="aqua-checkbox-control"><span class="aqua-checkbox-left"></span><span class="aqua-checkbox-right"></span></span><span class="aqua-checkbox-label">Checked</span></label>
+                      <label class="graphite-checkbox"><input type="checkbox" /><span class="aqua-checkbox-control"><span class="aqua-checkbox-left"></span><span class="aqua-checkbox-right"></span></span><span class="aqua-checkbox-label">Unchecked</span></label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Input &amp; Select</p>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start">
+                      <div class="aqua-input-wrap" style="flex:1;min-width:140px"><input class="graphite-input" type="text" placeholder="graphite-input…" /></div>
+                      <div class="aqua-select graphite-select" style="flex:1;min-width:140px">
+                        <div class="aqua-select-trigger">
+                          <div class="aqua-select-value-wrap"><span class="aqua-select-value">graphite-select…</span></div>
+                          <div class="aqua-select-cap"><svg viewBox="0 0 10 14" fill="none"><polygon points="5,1 9,5.5 1,5.5" fill="rgba(255,255,255,0.9)"/><polygon points="5,13 9,8.5 1,8.5" fill="rgba(255,255,255,0.9)"/></svg></div>
+                        </div>
+                        <div class="aqua-select-panel">
+                          <div class="aqua-select-panel-header">
+                            <div class="aqua-select-value-wrap"><span class="aqua-select-value">graphite-select…</span></div>
+                            <div class="aqua-select-cap"><svg viewBox="0 0 10 14" fill="none"><polygon points="5,1 9,5.5 1,5.5" fill="rgba(255,255,255,0.9)"/><polygon points="5,13 9,8.5 1,8.5" fill="rgba(255,255,255,0.9)"/></svg></div>
+                          </div>
+                          <div class="aqua-select-option" data-value="a">Alpha</div>
+                          <div class="aqua-select-option" data-value="b">Beta</div>
+                          <div class="aqua-select-option" data-value="c">Gamma</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Slider</p>
+                    <div class="aqua-slider graphite-slider" data-min="0" data-max="100" data-value="65">
+                      <div class="aqua-slider-track"><div class="aqua-slider-fill"></div><div class="aqua-slider-thumb"></div></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Progress</p>
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <div class="aqua-progress graphite-progress" data-value="55"><div class="aqua-progress-fill" style="width:55%"></div></div>
+                      <div class="aqua-progress-indeterminate graphite-progress"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--card-fg-muted);margin-bottom:8px">Scrollbar</p>
+                    <div class="aqua-scrollbar graphite-scrollbar" id="sb-graphite-demo" data-value="40" data-thumb-size="30">
+                      <div class="aqua-scrollbar-track"><div class="aqua-scrollbar-thumb"></div></div>
+                      <div class="aqua-scrollbar-buttons">
+                        <button class="aqua-scrollbar-button aqua-scrollbar-previous" title="Previous"><svg viewBox="0 0 8 7" fill="none"><polygon points="7,0.5 1,3.5 7,6.5" fill="currentColor"/></svg></button>
+                        <button class="aqua-scrollbar-button aqua-scrollbar-next" title="Next"><svg viewBox="0 0 8 7" fill="none"><polygon points="1,0.5 7,3.5 1,6.5" fill="currentColor"/></svg></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="aqua-tabview-wrap">
+            <div class="aqua-tabview" id="components-tabview" data-content-prefix="components-tab">
+              <div class="aqua-tabview-indicator"></div>
+              <div class="aqua-tabview-tab active" data-tab="buttons">Buttons</div>
+              <div class="aqua-tabview-tab" data-tab="radio">Radio</div>
+              <div class="aqua-tabview-tab" data-tab="checkbox">Checkbox</div>
+              <div class="aqua-tabview-tab" data-tab="inputs">Inputs</div>
+              <div class="aqua-tabview-tab" data-tab="slider">Slider</div>
+              <div class="aqua-tabview-tab" data-tab="progress">Progress</div>
+              <div class="aqua-tabview-tab" data-tab="scrollbar">Scrollbar</div>
+              <div class="aqua-tabview-tab" data-tab="tabview">Tab View</div>
+              <div class="aqua-tabview-tab" data-tab="graphite">Graphite</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" aria-label="DT" role="img">
+            <path fill-rule="evenodd" d="M292.722,796.139q-59.4,0-109.456-20.752T96.8,717.2q-36.411-37.433-56.763-89.519T19.691,512.529V487.708q0-62.655,20.345-114.949T96.8,282.834q36.421-37.632,86.873-58.39T294.35,203.692H485.186V796.139H292.722Zm1.628-482.177q-63.068,0-96.029,43.538T165.362,486.9v25.634q0,86.27,32.959,130.005t94.4,43.742h49.642V313.962H294.35Z"/>
+            <path d="M980.308,203.413h-495.2v110.27H659.67V795.861H802.492V313.683H980.308V203.413Z"/>
+          </svg>
+
+          <div class="footer-brand-text">
+            <span class="designed-by">Designed by</span>
+            <span class="name">Dhruv Trivedi</span>
+          </div>
+        </div>
+        <a href="https://github.com/thatdhruv/aqua2/" target="_blank" rel="noopener" class="footer-github">GitHub <svg viewBox="0 0 14 8" fill="none" width="15" height="10"><circle cx="3" cy="4" r="1.5" fill="currentColor"/><circle cx="6.8" cy="4" r="1.5" fill="currentColor"/><polygon points="10,0 14,4 10,8" fill="currentColor"/></svg></a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/thatdhruv/aqua2@master/aqua2.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
