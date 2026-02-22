@@ -27,11 +27,11 @@ entries.forEach(e => {
 
 document.querySelectorAll('.reveal').forEach(e => revealObserver.observe(e));
 
-function copyBlock(button) {
-const preTag = button.closest('.code-block').querySelector('pre');
+function copyBlock(copyButton) {
+const preTag = copyButton.closest('.code-block').querySelector('pre');
 navigator.clipboard.writeText(pre.innerText.trim()).then(() => {
-    const originalText = button.textContent;
-    button.textContent = 'Copied!'
-    setTimeout(() => button.textContent = originalText, 1800);
+    const originalText = copyButton.textContent;
+    copyButton.textContent = 'Copied!'
+    setTimeout(() => copyButton.textContent = originalText, 1800);
 });
 }
