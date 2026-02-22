@@ -28,10 +28,10 @@ entries.forEach(e => {
 document.querySelectorAll('.reveal').forEach(e => revealObserver.observe(e));
 
 function copyBlock(copyButton) {
-const preTag = copyButton.closest('.code-block').querySelector('pre');
-navigator.clipboard.writeText(pre.innerText.trim()).then(() => {
-    const originalText = copyButton.textContent;
-    copyButton.textContent = 'Copied!'
-    setTimeout(() => copyButton.textContent = originalText, 1800);
-});
+    const preTag = copyButton.closest('.code-block').querySelector('pre');
+    navigator.clipboard.writeText(preTag.innerText.trim()).then(() => {
+        const originalText = copyButton.textContent;
+        copyButton.textContent = 'Copied!'
+        setTimeout(() => copyButton.textContent = originalText, 1800);
+    });
 }
