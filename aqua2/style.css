@@ -34,6 +34,20 @@
     }
 }
 
+@font-face {
+  font-family: 'Lucida Grande';
+  src: url('Lucida Grande Regular.ttf');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lucia Grande';
+  src: url('Lucida Grande Bold.ttf');
+  font-weight: 700;
+  font-display: swap;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -45,7 +59,7 @@ html {
 }
 
 body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Grande';
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   color: var(--aqua-foreground);
