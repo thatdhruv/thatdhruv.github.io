@@ -1,127 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Dhruv Trivedi | Software Engineer</title>
-    <link rel="icon" href="dt-designer.png" type="image/png" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <a href="#home" class="nav-logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 1000 1000" aria-label="DT" role="img" style="width:40px;height:40px;fill:currentColor;flex-shrink:0;">
-          <path fill-rule="evenodd" d="M292.722,796.139q-59.4,0-109.456-20.752T96.8,717.2q-36.411-37.433-56.763-89.519T19.691,512.529V487.708q0-62.655,20.345-114.949T96.8,282.834q36.421-37.632,86.873-58.39T294.35,203.692H485.186V796.139H292.722Zm1.628-482.177q-63.068,0-96.029,43.538T165.362,486.9v25.634q0,86.27,32.959,130.005t94.4,43.742h49.642V313.962H294.35Z" />
-          <path d="M980.308,203.413h-495.2v110.27H659.67V795.861H802.492V313.683H980.308V203.413Z" />
-        </svg>
-        <span class="brand-text">
-          <span class="designed-by"><span>Designed by</span></span>
-          <span class="name"><span>Dhruv Trivedi</span></span>
-        </span>
-      </a>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <title>Dhruv Trivedi | Software Engineer</title>
+        <link rel="icon" href="dt-designer.png" type="image/png" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="#home" class="nav-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 1000 1000" aria-label="DT" role="img" fill="currentColor">
+                    <path fill-rule="evenodd" d="M292.722,796.139q-59.4,0-109.456-20.752T96.8,717.2q-36.411-37.433-56.763-89.519T19.691,512.529V487.708q0-62.655,20.345-114.949T96.8,282.834q36.421-37.632,86.873-58.39T294.35,203.692H485.186V796.139H292.722Zm1.628-482.177q-63.068,0-96.029,43.538T165.362,486.9v25.634q0,86.27,32.959,130.005t94.4,43.742h49.642V313.962H294.35Z" />
+                    <path d="M980.308,203.413h-495.2v110.27H659.67V795.861H802.492V313.683H980.308V203.413Z" />
+                </svg>
+                <span class="brand-text">
+                    <p class="designed-by">Designed by</p>
+                    <p class="name">Dhruv Trivedi</p>
+                </span>
+            </a>
 
-      <div class="nav-links" id="nav-links">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
+            <div class="nav-links" id="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
 
-      <div class="nav-actions">
-        <a href="resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
-      </div>
+            <div class="nav-actions">
+                <a href="resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume <svg viewBox="0 0 14 8" fill="none" width="15" height="10"><circle cx="3" cy="4" r="1.5" fill="currentColor"/><circle cx="6.8" cy="4" r="1.5" fill="currentColor"/><polygon points="10,0 14,4 10,8" fill="currentColor"/></svg></a>
+            </div>
 
-      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
 
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
-    </div>
-
-    <section id="home">
-      <p class="hero-eyebrow">Software Engineer</p>
-      <h1 class="hero-headline">I make software that "just works".</h1>
-      <p class="hero-sub">
-        I build reliable, maintainable software - from low-level C daemons
-        to full-stack web apps and native experiences.
-      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="aqua-button">View Projects</a>
-        <a href="resume.pdf" target="_blank" rel="noopener" class="aqua-button aqua-button-focused">Get Resume</a>
-      </div>
-    </section>
-
-    <section id="about">
-      <p class="section-label reveal">About Me</p>
-      <h2 class="section-headline reveal">Hello, I'm Dhruv.</h2>
-      <p class="section-body reveal">
-        I'm a software engineer who cares about correctness, clarity, and
-        code that still makes sense six months later - whether that's a
-        POSIX daemon in C, a SwiftUI app, or a containerized Node.js backed.
-      </p>
-    </section>
-
-    <section id="projects">
-      <div class="projects-header">
-        <p class="section-label reveal">Projects</p>
-        <h2 class="section-headline reveal">Things I've built.</h2>
-      </div>
-
-      <div class="projects-grid stagger">
-        <div class="project-card reveal">
-          <h3>Circulate</h3>
-          <p class="stack">React · Node.js · Express · MongoDB · Docker</p>
-          <p class="desc">A containerized full-stack library management system with user enrollment, book inventry, loan lifecycle tracking, and a Reactdashboad for live system metrics.</p>
-          <a href="https://github.com/thatdhruv" target="_blank" rel="noopener" class="scroll-ind" aria-label="Explore on GitHub">
-            <div class="dot"></div><div class="dot"></div><div class="tri"></div>
-          </a>
+        <div class="menu" id="menu" aria-hidden="true">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume <svg viewBox="0 0 14 8" fill="none" width="15" height="10"><circle cx="3" cy="4" r="1.5" fill="currentColor"/><circle cx="6.8" cy="4" r="1.5" fill="currentColor"/><polygon points="10,0 14,4 10,8" fill="currentColor"/></svg></a>
         </div>
-        
-        <div class="project-card reveal">
-          <h3>Hydrate</h3>
-          <p class="stack">Swift · SwiftUI · WidgetKit</p>
-          <p class="desc">A minimal iOS hydration tracker with interactive lock-screen widgets, App Groups data sync, and a smart notification system that auto-cancels when your daily goal is hit.</p>
-          <a href="https://github.com/thatdhruv" target="_blank" rel="noopener" class="scroll-ind" aria-label="Explore on GitHub">
-            <div class="dot"></div><div class="dot"></div><div class="tri"></div>
-          </a>
-        </div>
-        
-        <div class="project-card reveal">
-          <h3>now</h3>
-          <p class="stack">C · POSIX</p>
-          <p class="desc">A modular command-line TODO maager with a custom binary format, a full inline markdown parser supporting 10 syntax forms, and a double-fork POSIX daemon for adaptive deadline notifications.</p>
-          <a href="https://github.com/thatdhruv" target="_blank" rel="noopener" class="scroll-ind" aria-label="Explore on GitHub">
-            <div class="dot"></div><div class="dot"></div><div class="tri"></div>
-          </a>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact">
-      <p class="section-label reveal">Contact</p>
-      <h2 class="section-headline reveal">Let's connect.</h2>
-      <p class="section-body reveal">
-        Ping me at <a href="mailto:thatdhruv@gmail.com">thatdhruv@gmail.com</a>
-      </p>
-      <div class="contact-links reveal">
-        <a href="https://linkedin.com/in/thatdhruv" target="_blank" rel="noopener" class="aqua-button">LinkedIn</a>
-        <a href="https://github.com/thatdhruv" target="_blank" rel="noopener" class="aqua-button">GitHub</a>
-      </div>
-    </section>
+        <section id="home">
+            <p class="hero-eyebrow">Software Engineer</p>
+            <h1 class="hero-headline">Software that works, and keeps working.</h1>
+            <p class="hero-sub">
+                I design and ship modern interfaces, full-stack systems, and native applications.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="graphite-button">View Projects</a>
+                <a href="resume.pdf" target="_blank" rel="noopener" class="graphite-button graphite-button-focused">Get Resume</a>
+            </div>
+        </section>
 
-    <footer>
-      <span class="brand-text">
-        <span class="designed-by"><span>Designed by</span></span>
-        <span class="name"><span>Dhruv Trivedi</span></span>
-      </span>
-    </footer>
+        <section id="about">
+            <p class="section-label reveal">About Me</p>
+            <h2 class="section-headline reveal">Hello, I'm Dhruv.</h2>
+            <p class="section-body reveal">
+                I’m a software engineer working across systems, web,
+                and native platforms &mdash; building modern UI systems,
+                full-stack applications, and native experiences.
+            </p>
+        </section>
 
-    <script src="script.js"></script>
-  </body>
+        <section id="projects">
+            <div class="projects-header">
+                <p class="section-label reveal">Projects</p>
+                <h2 class="section-headline reveal">Things I've built.</h2>
+            </div>
+
+            <div class="projects-grid stagger">
+                <div class="project-card reveal">
+                    <h3>Aqua 2</h3>
+                    <p class="stack">Javascript · CSS</p>
+                    <p class="description">A self-contained UI framework for the web, inspired by Apple's Aqua design language.</p>
+                    <a href="https://github.com/thatdhruv/aqua2/" target="_blank" rel="noopener" class="graphite-button-circular" aria-label="Explore on GitHub">
+                        <svg viewBox="0 0 14 8" fill="none" width="15" height="10"><circle cx="3" cy="4" r="1.5" fill="currentColor"/><circle cx="6.8" cy="4" r="1.5" fill="currentColor"/><polygon points="10,0 14,4 10,8" fill="currentColor"/></svg>
+                    </a>
+                </div>
+
+                <div class="project-card reveal">
+                    <h3>Circulate</h3>
+                    <p class="stack">React · MongoDB · Docker</p>
+                    <p class="description">A containerized full-stack library management system with a dashboard for live system metrics.</p>
+                    <a href="https://github.com/thatdhruv/circulate/" target="_blank" rel="noopener" class="graphite-button-circular" aria-label="Explore on GitHub">
+                        <svg viewBox="0 0 14 8" fill="none" width="15" height="10"><circle cx="3" cy="4" r="1.5" fill="currentColor"/><circle cx="6.8" cy="4" r="1.5" fill="currentColor"/><polygon points="10,0 14,4 10,8" fill="currentColor"/></svg>
+                    </a>
+                </div>
+                
+                <div class="project-card reveal">
+                    <h3>Hydrate</h3>
+                    <p class="stack">Swift · SwiftUI · WidgetKit</p>
+                    <p class="description">A minimal iOS hydration tracker with interactive lock-screen widgets and a smart notification system.</p>
+                    <a href="https://github.com/thatdhruv/hydrate/" target="_blank" rel="noopener" class="graphite-button-circular" aria-label="Explore on GitHub">
+                        <svg viewBox="0 0 14 8" fill="none" width="15" height="10"><circle cx="3" cy="4" r="1.5" fill="currentColor"/><circle cx="6.8" cy="4" r="1.5" fill="currentColor"/><polygon points="10,0 14,4 10,8" fill="currentColor"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <p class="section-label reveal">Contact</p>
+            <h2 class="section-headline reveal">Let's connect.</h2>
+            <p class="section-body reveal">
+                Ping me at <a href="mailto:thatdhruv@gmail.com">thatdhruv@gmail.com</a>
+            </p>
+            <div class="contact-links reveal">
+                <a href="https://linkedin.com/in/thatdhruv" target="_blank" rel="noopener" class="aqua-button">LinkedIn</a>
+                <a href="https://github.com/thatdhruv" target="_blank" rel="noopener" class="aqua-button">GitHub</a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-inner">
+                <a href="#home" class="nav-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 1000 1000" aria-label="DT" role="img" fill="currentColor">
+                        <path fill-rule="evenodd" d="M292.722,796.139q-59.4,0-109.456-20.752T96.8,717.2q-36.411-37.433-56.763-89.519T19.691,512.529V487.708q0-62.655,20.345-114.949T96.8,282.834q36.421-37.632,86.873-58.39T294.35,203.692H485.186V796.139H292.722Zm1.628-482.177q-63.068,0-96.029,43.538T165.362,486.9v25.634q0,86.27,32.959,130.005t94.4,43.742h49.642V313.962H294.35Z" />
+                        <path d="M980.308,203.413h-495.2v110.27H659.67V795.861H802.492V313.683H980.308V203.413Z" />
+                    </svg>
+                    <span class="brand-text">
+                        <p class="designed-by">Designed by</p>
+                        <p class="name">Dhruv Trivedi</p>
+                    </span>
+                </a>
+
+                <a href="https://thatdhruv.github.io/aqua2/" class="nav-logo">
+                    <span class="footer-made-with">Made with <span class="aqua2-badge">Aqua 2</span></span>
+                </a>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/gh/thatdhruv/aqua2@main/aqua2.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
