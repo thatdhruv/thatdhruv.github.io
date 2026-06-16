@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import "../styles/aesthetics.css";
+
+@theme inline {
+  --color-background: var(--token-background);
+  --color-surface: var(--token-surface);
+  --color-surface-elevated: var(--token-surface-elevated);
+  --color-border: var(--token-border);
+  --color-muted: var(--token-muted);
+  --color-foreground: var(--token-foreground);
+  --color-accent: var(--token-accent);
+  --color-accent-secondary: var(--token-accent-secondary);
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--token-background);
+  color: var(--token-foreground);
+  font-family: var(--font-family-sans);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--token-accent) 25%, transparent);
+  color: var(--token-foreground);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
